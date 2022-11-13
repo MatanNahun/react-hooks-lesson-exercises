@@ -25,7 +25,7 @@ export default function Exercise2() {
       <h4 className="ex-title">Exercise 2</h4>
       <div className="exercise" id="ex-2"></div>
       {users.map((user) => (
-        <div>
+        <div key={user.name.first}>
           {user.name.first} {user.name.last}
           <img height="50" width="50" src={user.picture.large} alt="movie" />
         </div>
