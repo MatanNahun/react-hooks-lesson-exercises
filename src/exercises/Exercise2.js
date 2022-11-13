@@ -10,14 +10,9 @@ export default function Exercise2() {
   //   });
   // }, []);
 
-  useEffect(() => {
-    const getUsers = async () => {
-      const usersDataApi = await axios.get(
-        "https://randomuser.me/api/?results=5"
-      );
-      setUsers(usersDataApi.data.results);
-    };
-    getUsers();
+  useEffect(async () => {
+    const users = await axios.get("https://randomuser.me/api/?results=5");
+    setUsers(users.data.results);
   }, []);
 
   return (
